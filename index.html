@@ -1,0 +1,73 @@
+<html>
+<head>
+  <meta charset="UTF-8" />
+  <title>Interactive Media</title>
+    <!-- 
+        CSS Stuff
+    -->
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      width: 100%;
+      height: 100%;
+    }
+
+   #webgl, #css3d {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  margin: 0; padding: 0;
+  overflow: hidden;
+}
+
+    #webgl {
+    pointer-events: none;
+    z-index: 0;
+    }
+
+    #css3d {
+    pointer-events: auto;
+    user-select: text;
+    z-index: 1;
+    }
+
+    #menu {
+        position: absolute;
+        top: 0%;
+        left: 50%;
+        transform: translateX(-50%);
+        display: flex;
+        flex-direction: row;
+        z-index: 2;
+    }
+  </style>
+</head>
+
+
+<body>
+
+  <div id="webgl"></div>
+  <div id="css3d"></div>
+    <!-- 
+        Buttons At Top-Center of Screen
+    -->
+  <div id="menu">
+  <button id="video">📽️ Video Search</button>
+  <button id="term">💬 Term Search</button>
+  <button id="music">🎵 Music Player</button>
+    </div>
+
+  <!--Three.js and helpers -->
+  <script src="lib/three.js"></script>
+  <script src="lib/OrbitControls.js"></script>
+  <script src="https://cdn.jsdelivr.net/gh/mrdoob/three.js@r134/examples/js/renderers/CSS3DRenderer.js"></script>
+  <script src="lib/stats.js"></script>
+
+  <!-- Project Code -->
+  <script src="object.js"></script>
+  <script src="Scenes.js"></script>
+  <script src="main.js"></script>
+</body>
+</html>
