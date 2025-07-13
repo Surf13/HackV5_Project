@@ -11,7 +11,6 @@ function musicLauncher(){
     scene.add(lights);
 
     //Background
-    //Scene Background
 	const scene_background = new THREE.TextureLoader().load('./assets/stars-1869692_1280.jpg');
 	scene.background = scene_background;
 
@@ -111,11 +110,13 @@ function videoLauncher(){
 
 
     var cubes = [];
-
+    
+    //First Panel Initialization
     var cubeObj = CreateVideoBox('Hackathon: Hack United V5 Opening',cssScene).then(objs => {
             cubeObj = objs
             cubeObj.forEach(box => cubes.push(box));
         });
+
     //API Work
     obj.element.addEventListener('keydown', async (e) => {
         if (e.key === 'Enter') {

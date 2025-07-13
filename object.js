@@ -75,6 +75,7 @@ function createPanel(color) {
     Music Cards
 */
 function createSongPanel(song,color){
+    //Card/Panel
     var card = document.createElement('div');
     card.style.width = '300';
     card.style.height = 'auto';
@@ -87,13 +88,14 @@ function createSongPanel(song,color){
     card.style.fontFamily = 'Arial, sans-serif';
     card.style.fontSize = '14px';
     card.textContent = '';
+    
     //Image
     var image = document.createElement('img');
     image.src = song.artwork?.['150x150'];
     image.alt = song.title;
     card.append(image);
+    
     //Title
-
     const title = document.createElement('h4');
     title.textContent = song.title;
     title.style.margin = '10px 0 5px';
@@ -112,6 +114,7 @@ function createSongPanel(song,color){
     audio.style.width = '100%';
     card.appendChild(audio);
 
+    //3D Object
     const obj = new THREE.CSS3DObject(card);
 
     return obj;
@@ -121,7 +124,7 @@ function createSongPanel(song,color){
     YoutubeCube Object
 */
 async function CreateVideoBox(query,scene){
-
+    //Api Work
     const apiKey = 'AIzaSyAog1yfIq3ecWrzZsMJ-O03RZToMP-VTBc';
     const maxResults = 9;
     const response = await fetch(`https://www.googleapis.com/youtube/v3/search?part=snippet&type=video&q=${encodeURIComponent(query)}&order=date&maxResults=${maxResults}&key=${apiKey}`);
@@ -168,7 +171,7 @@ async function CreateVideoBox(query,scene){
 }
 
 //Make Cards Orbit Camera after being summoned
-function animateCards(cards,orbitRadius=1600,jumps=15,orbitSpeed = 0.0005){
+function animateCards(cards,orbitRadius=1600,jumps=15,orbitSpeed = 0.0005){ //Its Late and I want to go to bed
 
     cards.forEach((card, index) => {
         const data = card.userData;

@@ -1,3 +1,4 @@
+//Global Variables (Ya....I know this is bad)
 var camera, renderer, cssRenderer;
 var currentScene = null;
 var cards = [];
@@ -66,4 +67,4 @@ document.addEventListener('keydown', (event) => {
     }
 });
 
-var start = switchScene('music');
+var start = switchScene('music'); //Start on Music Page
